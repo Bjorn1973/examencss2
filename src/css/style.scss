@@ -7,3 +7,293 @@
 html {
   font-size: 62.5%;
 }
+section {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+.container {
+  width: 58%;
+  max-width: 940px;
+  margin: 0 auto;
+}
+.btn {
+  width: 120px;
+  height: 40px;
+  color: $turquoise;
+  @include fontP;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid $turquoise;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-left: calc(50% - 60px);
+  margin-bottom: 70px;
+}
+div.title {
+  text-align: center;
+  padding-top: 65px;
+  position: relative;
+  &::after {
+    content: "";
+    background-color: $title;
+    width: 50px;
+    height: 2px;
+    position: absolute;
+    bottom: -22px;
+    left: calc(50% - 25px);
+  }
+  h1 {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    color: $title;
+  }
+  h2 {
+    font-family: "Playfair Display", sans-serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    margin-bottom: 65px;
+    color: $text;
+  }
+}
+.intro {
+  background-image: url(../images/trees1.jpg);
+  background-position: cover;
+  background-repeat: no-repeat;
+  nav {
+    @include flex(row, space-between, center);
+    padding: 15px 0;
+    a {
+      width: 100%;
+      height: auto;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    ul {
+      @include flex(row, space-between, center);
+      li {
+        margin-right: 5px;
+        a {
+          text-decoration: none;
+          font-family: "Roboto", sans-serif;
+          font-size: 1.3rem;
+          font-weight: 400;
+          color: $white;
+          text-transform: uppercase;
+          padding-left: 10px;
+          padding-right: 10px;
+          cursor: pointer;
+          transition: all 300ms;
+          &:nth-child(7) {
+            margin-right: 0;
+            padding-right: 0;
+          }
+          &:hover,
+          &.active {
+            color: $turquoise;
+          }
+        }
+      }
+    }
+  }
+  div {
+    h1 {
+      text-align: center;
+      padding: 140px 70px 60px 70px;
+      font-family: "Playfair Display", sans-serif;
+      font-weight: 700;
+      font-size: 3.2rem;
+      color: $white;
+      text-transform: capitalize;
+    }
+    p {
+      text-align: center;
+      @include fontP;
+      color: $white;
+      line-height: 2.4rem;
+      padding-bottom: 46px;
+    }
+    ul.second {
+      margin: 0 auto;
+      @include flex(row, center, center);
+      li {
+        a.link {
+          display: block;
+          border: 1px solid $white;
+          border-radius: 50%;
+          background-color: transparent;
+          margin: 55px 5px 70px 5px;
+          width: 9px;
+          height: 9px;
+          color: $white;
+          &:nth-child(1) {
+            margin-left: 0;
+          }
+          &:nth-child(4) {
+            margin-right: 0;
+          }
+          &:hover,
+          &.active {
+            background-color: $turquoise;
+            border-color: $turquoise;
+          }
+        }
+      }
+    }
+  }
+}
+.story {
+  .story__col {
+    display: flex;
+    img {
+      display: block;
+      width: 50%;
+      height: auto;
+    }
+    p {
+      width: 75%;
+      @include fontP;
+      line-height: 2.2rem;
+      color: $text;
+      margin-bottom: 35px;
+      padding-left: 120px;
+    }
+  }
+}
+.watch {
+  height: 550px;
+  background-image: url(../images/skyline.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  a {
+    display: block;
+    padding-left: calc(50% - 5.25rem);
+    padding-top: 200px;
+    font-size: 10.5rem;
+    color: $white;
+  }
+  h3 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: $white;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 33px;
+  }
+}
+.expertise {
+  .col1 {
+    @include make-col(3, 1px);
+    margin-bottom: 70px;
+    .info {
+      text-align: center;
+      padding: 40px 30px;
+      border-right: 1px solid #ebebeb;
+      border-bottom: 1px solid #ebebeb;
+      &:nth-child(4),
+      &:nth-child(5),
+      &:nth-child(6) {
+        border-bottom: none;
+      }
+      &:nth-child(3),
+      &:nth-child(6) {
+        border-right: none;
+      }
+      a {
+        display: block;
+        font-size: 5rem;
+        color: $turquoise;
+        padding-bottom: 35px;
+      }
+      h3 {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: black;
+        text-transform: uppercase;
+        padding-bottom: 20px;
+      }
+      p {
+        @include fontP;
+        line-height: 2.2rem;
+        color: $text;
+      }
+    }
+  }
+}
+.team {
+  background-image: url(../images/trees2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  div.title {
+    h1,
+    h2 {
+      color: $white;
+    }
+    &::after {
+      background-color: $white;
+    }
+  }
+  .teammembers {
+    @include make-col(4, 20px);
+    margin-bottom: 110px;
+  }
+  div {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .memberinfo {
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 20px 0;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.4rem;
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      .name {
+        font-weight: 700;
+        padding-bottom: 15px;
+      }
+      .function {
+        font-weight: 400;
+      }
+    }
+  }
+}
+.work {
+  .grey {
+    @include make-col(6, 0px);
+    margin-bottom: 70px;
+    div {
+      height: 200px;
+    }
+    .show1 {
+      background-color: #b6b6b6;
+    }
+    .show2 {
+      background-color: #acacac;
+    }
+    .show3 {
+      background-color: #a1a1a1;
+    }
+    .show4 {
+      background-color: #8a8a8a;
+    }
+  }
+}
+footer {
+  background-color: #120e37;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: $white;
+  text-align: center;
+  padding: 28px 0;
+}
