@@ -67,11 +67,17 @@ div.title {
     @include flex(row, space-between, center);
     padding: 15px 0;
     a {
+      display: block;
       width: 100%;
       height: auto;
       &:hover {
         transform: scale(1.2);
       }
+    }
+    a.hamburger {
+      display: none;
+      font-size: 2.5rem;
+      color: $white;
     }
     ul {
       @include flex(row, space-between, center);
@@ -101,6 +107,10 @@ div.title {
     }
   }
   div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     h1 {
       text-align: center;
       padding: 140px 70px 60px 70px;
@@ -116,6 +126,9 @@ div.title {
       color: $white;
       line-height: 2.4rem;
       padding-bottom: 46px;
+    }
+    .btn {
+      margin-left: 0;
     }
     ul.second {
       margin: 0 auto;
@@ -149,18 +162,23 @@ div.title {
 .story {
   .story__col {
     display: flex;
-    img {
-      display: block;
-      width: 50%;
-      height: auto;
+    div.img {
+      width: calc(38% + 105px);
+      justify-content: center;
+      align-content: center;
+      img {
+        width: 66%;
+        height: auto;
+      }
+    }
+    div.content {
+      width: calc(51%);
     }
     p {
-      width: 75%;
       @include fontP;
       line-height: 2.2rem;
       color: $text;
       margin-bottom: 35px;
-      padding-left: 120px;
     }
   }
 }
@@ -296,4 +314,194 @@ footer {
   color: $white;
   text-align: center;
   padding: 28px 0;
+}
+@media screen and (max-width: 1300px) {
+  .expertise {
+    .col1 {
+      .info {
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1150px) {
+  .intro {
+    nav {
+      @include flex(column, space-between, center);
+      padding: 15px 0;
+      a {
+        display: block;
+        text-align: center;
+        padding-bottom: 15px;
+      }
+    }
+    div {
+      p {
+        & br {
+          display: none;
+        }
+      }
+      ul.second {
+        margin: 0 auto;
+        @include flex(row, center, center);
+      }
+    }
+  }
+  .intro div h,
+  .intro div p {
+    width: 80%;
+  }
+  .team {
+    .teammembers {
+      @include make-col(2, 20px);
+    }
+  }
+  .work {
+    .grey {
+      @include make-col(4, 0px);
+    }
+  }
+  .watch {
+    height: 400px;
+    a {
+      padding-top: 150px;
+    }
+  }
+
+  .expertise {
+    .col1 {
+      @include make-col(2, 1px);
+
+      .info {
+        &:nth-child(2),
+        &:nth-child(4) {
+          border-right: none;
+        }
+        &:nth-child(4) {
+          border-bottom: 1px solid #ebebeb;
+        }
+        &:nth-child(3) {
+          border-right: 1px solid #ebebeb;
+        }
+        h3 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1000px) {
+  .btn {
+    margin-bottom: 50px;
+  }
+  .story {
+    .story__col {
+      div.img {
+        width: calc(30% + 105px);
+        img {
+          width: 80%;
+          height: auto;
+        }
+      }
+      div.content {
+        width: calc(70%);
+      }
+      p {
+        margin-bottom: 25px;
+      }
+    }
+  }
+  .work {
+    .grey {
+      @include make-col(3, 0px);
+    }
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    width: 80%;
+  }
+  .team .teammembers {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 700px) {
+  html {
+    font-size: 50%;
+  }
+  .btn {
+    margin-bottom: 30px;
+  }
+  .intro div p,
+  .intro div h1 {
+    padding: 0 40px 46px 40px;
+  }
+}
+@media screen and (max-width: 580px) {
+  .work {
+    .grey {
+      @include make-col(2, 0px);
+    }
+  }
+  .story {
+    .story__col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      div.img {
+        img {
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+      div.content {
+        width: 80%;
+      }
+      p {
+        @include fontP;
+        line-height: 2.2rem;
+        color: $text;
+        margin-bottom: 35px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  html {
+    font-size: 45%;
+  }
+  .intro nav ul {
+    display: none;
+  }
+  .intro nav a.hamburger {
+    display: block;
+  }
+}
+@media screen and (max-width: 450px) {
+  .expertise {
+    .col1 {
+      @include make-col(1, 1px);
+
+      .info {
+        border-right: none;
+        &:nth-child(4),
+        &:nth-child(5) {
+          border-bottom: 1px solid #ebebeb;
+        }
+        &:nth-child(3) {
+          border-right: none;
+        }
+        h3 {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  .intro div h1 {
+    padding: 0 60px 30px 60px;
+  }
 }
